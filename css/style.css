@@ -9,10 +9,17 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: 5fr 1fr;
+    grid-template-columns: 4fr 1fr;
     gap: 20px;
     padding: 20px;
 }
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 
 /* cards */
 .cards-container {
@@ -21,11 +28,12 @@ body {
     gap: 20px;
     padding: 20px;
 }
-
 .card {
     width: 275px;
     border-radius: 12px;
     overflow: hidden;
+    text-decoration: none;
+    color: inherit;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     background: #fff;
     transition: transform 0.2s;
@@ -41,6 +49,7 @@ body {
     display: block;
     margin: 0 auto;
     padding: 5px;
+    border-radius: 12px;
 }
 
 .card-content {
@@ -75,7 +84,6 @@ body {
     margin-bottom: 15px;
     font-style: italic;
 }
-
 
 /* Header */
 header {
@@ -120,20 +128,6 @@ main {
     margin-right: 20px;
 }
 
-article {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-article h2 {
-    margin-top: 0;
-    color: #333;
-}
-
-
 /* Barra Lateral (Aside) */
 aside {
     flex: 1;
@@ -169,7 +163,7 @@ aside {
 .categories ul li a:hover {
     text-decoration: underline;
     color: blue;
-    
+
 }
 
 /* Footer */
@@ -179,4 +173,14 @@ footer {
     background-color: #333;
     color: #fff;
     margin-top: 20px;
+}
+
+
+
+/* ids */
+#colaboradores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px 20px;
+    margin: 0 200px;
 }
