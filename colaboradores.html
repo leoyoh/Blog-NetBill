@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colaboradores NetBil</title>
+    <script type="text/javascript" src="js/functions.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -24,9 +26,11 @@
     </header>
 
     <h1>Colaboradores</h1>
-        <div class="cards-container" id="colaboradores">
-            <script src="js/colaboradores.js"></script>
-        </div>
+    <div class="cards-container" id="colaboradores">
+        <script>
+            carregarCol()
+        </script>
+    </div>
 
     <footer>
         <p>&copy; 2025 Blog Netbil. Todos os direitos reservados.</p>
@@ -34,4 +38,3 @@
 </body>
 
 </html>
-
