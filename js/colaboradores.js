@@ -1,4 +1,3 @@
-
 /* função carregar colaboradores */
 
 function carregarCol() {
@@ -29,30 +28,4 @@ function carregarCol() {
         .catch(err => {
             console.error("Erro ao buscar colaboradores:", err);
         });
-}
-
-
-// recebe os dados post do form contato e manda para api
-
-function dadosContato() {
-    let nome = document.getElementById('nome').value.trim();
-    let email = document.getElementById('email').value.trim();
-    let telefone = document.getElementById('contato').value.trim();
-    let cidade = document.getElementById('cidade').value.trim();
-    let mensagem = document.getElementById('mensagem').value.trim();
-
-    axios.post("https://netbil.com.br/api_netbil/api-teste-programacao/contato", { nome, email, telefone, cidade, mensagem }, {
-        headers: {
-            authorization: 'LF22023L0TKCIZMAHNETR572022PG9BILIDNHR'
-        }
-    }).then(({ data }) => {
-        console.log(data);
-        alert("Mensagem enviada com sucesso!");
-        document.getElementById("contato").reset();
-    }).catch(err => {
-        console.error("Erro ao enviar contato:", err);
-        alert("Erro ao enviar mensagem.");
-    });
-
-
 }
