@@ -8,20 +8,26 @@
     <script type="text/javascript" src="assets/js/posts.js"></script>
     <script type="text/javascript" src="assets/js/contato.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        window.onload = () => {
+            carregarPosts();
+            categorias();
+            modalContato();
+        };</script>
 
     <title>Blog NetBil</title>
 </head>
 
 <body>
     <header>
-        <div class="logo">
+        <a href="index.html">
             <img src="assets/img/netbil.png">
-        </div>
+        </a>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="colaboradores.html">Colaboradores</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="#" id="abrirContato">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -30,9 +36,9 @@
         <main>
             <div class="cards-container" id="posts">
             </div>
-
         </main>
-        <aside class="sobrenos">
+        <aside>
+            <!-- Secao categorias -->
             <section class="categories">
                 <h3>Categorias</h3>
                 <ul>
@@ -44,16 +50,46 @@
                     <li><a href="#">Todas</a></li>
                 </ul>
             </section>
-            <h2>Sobre a Netbil</h2>
-            <p> Antes de tudo, a Netbil é composta por educadores. Pais, irmãos e amigos que, como profissionais da
-                educação, querem melhorar a qualidade do ensino a que nossos estudantes são expostos. Sabemos que eles
-                merecem o melhor e temos o compromisso de trazer materiais e soluções educacionais envolventes,
-                modernas, interativas e acessíveis, que permitam aos estudantes e aos professores explorarem todo o seu
-                potencial. Isso nos tornou, ao longo dos 20 anos da nossa história, uma das maiores desenvolvedoras de
-                softwares educacionais do Brasil, reconhecida pela excelência e qualidade dos produtos, serviços e
-                soluções tecnológicas que oferecemos.
-            </p>
+
+            <!-- Secao sobre a Netbil -->
+            <section class="sobrenos">
+                <h2>Sobre a Netbil</h2>
+                <p> Antes de tudo, a Netbil é composta por educadores. Pais, irmãos e amigos que, como profissionais da
+                    educação, querem melhorar a qualidade do ensino a que nossos estudantes são expostos. Sabemos que
+                    eles
+                    merecem o melhor e temos o compromisso de trazer materiais e soluções educacionais envolventes,
+                    modernas, interativas e acessíveis, que permitam aos estudantes e aos professores explorarem todo o
+                    seu
+                    potencial. Isso nos tornou, ao longo dos 20 anos da nossa história, uma das maiores desenvolvedoras
+                    de
+                    softwares educacionais do Brasil, reconhecida pela excelência e qualidade dos produtos, serviços e
+                    soluções tecnológicas que oferecemos.
+                </p>
+            </section>
         </aside>
+    </div>
+    
+    <!--Div Modal-->
+    <div id="overlay" class="overlay">
+        <div class="modal">
+            <span id="fecharModal" class="fechar">&times;</span>
+            <h2>Contato</h2>
+            <form id="form-contato">
+                <p>Nome:</p>
+                <input type="text" placeholder="Digite seu nome" name="nome" id="nome">
+                <p>E-Mail:</p>
+                <input type="email" placeholder="Digite seu E-mail" name="email" id="email" required>
+                <p>Telefone:</p>
+                <input type="tel" placeholder="Digite seu telefone" maxlength="11" pattern="\d{11}" name="telefone"
+                    id="telefone">
+                <p>Cidade:</p>
+                <input type="text" placeholder="Digite sua cidade" name="cidade" id="cidade">
+                <p>Mensagem:</p>
+                <textarea id="mensagem" name="mensagem" rows="5" cols="40"
+                    placeholder="Digite sua mensagem aqui..."></textarea>
+                <input type="submit" name="submit" onclick="dadosContato()">
+            </form>
+        </div>
     </div>
 
     <footer>

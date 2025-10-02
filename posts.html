@@ -5,23 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script type="text/javascript" src="assets/js/colaboradores.js"></script>
+    <script type="text/javascript" src="assets/js/posts.js"></script>
     <script type="text/javascript" src="assets/js/contato.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         window.onload = () => {
-            carregarCol();
             modalContato();
-        };</script>
+            abrirPost()
+        };
+    </script>
 
-    <title>Colaboradores NetBil</title> 
+    <title>Blog NetBil</title>
 </head>
 
 <body>
     <header>
+        <div class="logo">
             <a href="index.html">
                 <img src="assets/img/netbil.png">
             </a>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -30,11 +33,15 @@
             </ul>
         </nav>
     </header>
-
-    <h1>Colaboradores</h1>
-    <div class="cards-container" id="colaboradores">
+    <div>
+        <main class="post-info">
+            <h1 id="titulo"></h1>
+            <img id="imagem" alt="alt">
+            <p id="conteudo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cum suscipit laudantium
+                earum amet. Eveniet cupiditate deleniti inventore modi! Maxime iusto voluptas sunt, dolor repellat
+                mollitia quis cupiditate optio accusantium.</p>
+        </main>
     </div>
-
     <!--Div Modal-->
     <div id="overlay" class="overlay">
         <div class="modal">
@@ -57,6 +64,7 @@
             </form>
         </div>
     </div>
+
     <footer>
         <p>&copy; 2025 Blog Netbil. Todos os direitos reservados.</p>
     </footer>
